@@ -22,10 +22,10 @@ l = [[2,3], [6,7], [6,34], [8,98], [1,54]]
 print sorted(l, key = getKey)
 
 
-class Custom(object):
-	def __init__(self, name, number):
-	self.name = name
-	self.number = number
+# class Custom(object):
+# 	def __init__(self, name, number):
+# 	self.name = name
+# 	self.number = number
 
 customlist = [
 	Custom('object', 99),
@@ -40,7 +40,17 @@ def getKey(custom):
 print sorted(customlist, key = getKey)
 
 
+class Custom(object):
+	def __init__(self, name, number):
+		self.name = name
+		self.number = number
 
+	def __repr__(self):
+		return '{}:{} {}'.format(self.__class__.__name,
+									self.name,
+									self.number)
+
+print sorted(customlist, key = getKey)
 
 
 
